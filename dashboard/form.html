@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dashboard</title>
+</head>
+
+<body class="dark">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class="bx bxs-cat"></i>
+            <div class="logo-name"><span>Meow</span></div>
+        </a>
+        <ul class="side-menu">
+            <li class="active">
+                <a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a>
+            </li>
+            <li>
+                <a href="#"><i class="bx bx-store-alt"></i>Menu</a>
+            </li>
+            <li>
+                <a href="#"><i class="bx bx-message-square-dots"></i>Reservasi</a>
+            </li>
+            <li>
+                <a href="#"><i class="bx bx-group"></i>Users</a>
+            </li>
+            <li>
+                <a href="#"><i class="bx bx-bowl-rice"></i>Chef</a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class="bx bx-log-out-circle"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class="bx bx-menu"></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search..." />
+                    <button class="search-btn" type="submit">
+                        <i class="bx bx-search"></i>
+                    </button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden />
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="profile"><i class="bx bx-user-circle"></i></a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Menu</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/dashboard"> Dashboard </a></li>
+                        /
+                        <li><a href="/dashboard/menu">Menu</a></li>
+                        /
+                        <li><a href="/dashboard/menu/create" class="active">Create Menu</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-data">
+                <!-- Reminders -->
+                <div class="reminders">
+                    <form action="/dashboard/menu" method="POST">
+                        @csrf
+                        <div class="header">
+                            <i class="bx bx-note"></i>
+                            <h3>Tambah menu</h3>
+                            <button style="background: transparent;border:none;color:white"> <i
+                                    class="bx bx-plus"></i></button>
+
+                        </div>
+                        <ul class="task-list">
+                            <input type="text" placeholder="nama" class="completed">
+                            <input type="number" placeholder="harga" class="completed">
+                            <input type="text" placeholder="deskripsi" class="completed">
+                            <input type="file" placeholder="gambar" class="completed">
+                        </ul>
+                    </form>
+                </div>
+
+                <!-- End of Reminders-->
+            </div>
+        </main>
+
+
+        <script src="index.js"></script>
+</body>
+
+</html>
